@@ -19,7 +19,7 @@ const Login = () => {
       .catch((err) => console.log(err));
   };
   const handleGithubSignIn = () => {
-    signInWithPopup(auth, githubProvider).then((result) => setUser(result.user));
+    signInWithPopup(auth, githubProvider).then((result) => setUser(result.user)).catch(err=>console.log(err));
   };
   const handleLogOut = () => {
     signOut(auth).then(() => {
